@@ -34,6 +34,8 @@ public class Proj3 implements EntryPoint, ClickHandler
    TextBox userBox = new TextBox();
    PasswordTextBox passBox = new PasswordTextBox();
    Button loginButton = new Button("Login");
+   Button addButton = new Button("Create Survey");
+   //Button viewResults = new Button("View Results")
    
    ArrayList<MyUser> users;
    JsArray<User> jsonData;
@@ -62,6 +64,8 @@ public class Proj3 implements EntryPoint, ClickHandler
    {
 	  setupLogin();
 	  loginButton.addClickHandler(this);
+	  addButton.addClickHandler(this);
+	  //viewResults.addClickHandler(this);
       RootPanel.get().add(mainPanel);
    }
    public void onClick(ClickEvent e)
@@ -76,6 +80,9 @@ public class Proj3 implements EntryPoint, ClickHandler
 		   passBox.setText("");
 		   postRequest(url,postData,"postLogin");
 	   }
+	   /*else if (source == addButon) {
+	   	String url = baseURL + "/questions/createSurvey";
+	   }*/
 			   
 	}
 
